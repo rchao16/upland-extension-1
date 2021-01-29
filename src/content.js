@@ -11,7 +11,7 @@ class Main extends React.Component {
                <FrameContextConsumer>
                {
                   ({document, window}) => {
-                    return <App document={document} window={window} isExt={true}/> 
+                    return <App document={document} window={window}/> 
                   }
                 }
                 </FrameContextConsumer>
@@ -26,7 +26,7 @@ app.id = "my-extension-root";
 document.body.appendChild(app);
 ReactDOM.render(<Main />, app);
 
-app.style.display = "none";
+app.style.display = "block";
 
 chrome.runtime.onMessage.addListener(
    function(request, sender, sendResponse) {

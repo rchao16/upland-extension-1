@@ -5,6 +5,7 @@
   "dependencies": {
     "@babel/runtime": "^7.10.4",
     "autoprefixer": "^9.8.5",
+    "axios": "^0.21.1",
     "case-sensitive-paths-webpack-plugin": "^2.3.0",
     "chalk": "^4.1.0",
     "css-loader": "^3.6.0",
@@ -19,6 +20,8 @@
     "react-dom": "^16.13.1",
     "react-frame-component": "^4.1.2",
     "resolve": "^1.17.0",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^2.0.3",
     "whatwg-fetch": "3.2.0"
   },
   "scripts": {

@@ -3,23 +3,21 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Toolbar from './views/Toolbar/Toolbar.js'
+import 'semantic-ui-css/semantic.min.css'
 
 class App extends Component {
   render() {
+    
+    const {document, window} = this.props
+    
+    const body = document.body
+    body.style.backgroundColor = 'transparent'
+    console.log('body', body)
+
     return (
       <div className="App">
-        <header className="App-header">
-          {this.props.isExt ? 
-            <img src={chrome.runtime.getURL("static/media/logo.svg")} className="App-logo" alt="logo" />
-          :
-            <img src={logo} className="App-logo" alt="logo" />
-          }
-
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Toolbar />
       </div>
     );
   }
