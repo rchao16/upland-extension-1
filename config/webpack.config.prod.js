@@ -156,7 +156,8 @@ module.exports = {
             include: paths.appSrc,
             loader: require.resolve('babel-loader'),
             options: {
-              
+              presets: ['@babel/preset-react', '@babel/preset-env'],
+              plugins: ["transform-class-properties"],              
               compact: true,
             },
           },

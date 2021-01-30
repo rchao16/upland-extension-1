@@ -13,7 +13,6 @@ class App extends Component {
     
     const body = document.body
     body.style.backgroundColor = 'transparent'
-    console.log('body', body)
 
     return (
       <div className="App">

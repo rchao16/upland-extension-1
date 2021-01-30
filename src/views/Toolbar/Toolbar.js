@@ -1,10 +1,17 @@
 import React, {Component} from 'react'
 import { Icon, Label } from 'semantic-ui-react'
 import axios from 'axios'
+import './Toolbar.css'
 
 const api = "https://api.upland.me/teleports/counter"
 
 class Toolbar extends Component {
+    constructor(props){
+        super(props)
+        this.state ={
+            sendCount: 0
+        }
+    }
 
     fetchSendCount = async () => {
         try {
@@ -15,7 +22,7 @@ class Toolbar extends Component {
             }
           })
           .then((res) => {
-              console.log(res.data.toOtherProp)
+              this.setState({sendCount: res.data.toOtherProp})
           })
           .catch((error) => {
             console.error(error)
@@ -29,7 +36,7 @@ class Toolbar extends Component {
     componentDidMount() {
         this.intervalId = setInterval(() => {
             this.fetchSendCount()
-        }, 5000) 
+        }, 8000) 
     }
 
     componentWillUnmount() {
@@ -37,11 +44,13 @@ class Toolbar extends Component {
     }
 
     render() { 
-        // const {sendCount} = this.props.toolbar
+        const {sendCount} = this.state
         return (
-            <Label>
-                <Icon name='mail' /> 23
-            </Label>
+            <div id='toolbar'>
+                <Label>
+                    <Icon name='mail' /> {sendCount}
+                </Label>
+            </div>
         )
     }
 }
